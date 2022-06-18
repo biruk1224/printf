@@ -1,230 +1,243 @@
-# An implementation of printf() function in pure C programming language
+# printf
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://github.com/narnat/printf)
+### Description
 
-## Overview
-
-**_printf()** - is a Holberton school group project. The task is to write a custom version of printf() from standard library.
-
-Table of contents
-=================
-
-<!--ts-->
-   * [Overview](#overview)
-   * [Table of contents](#table-of-contents)
-   * [General Requirements](#general-requirements)
-   * [Authorized functions and macros](#authorized-functions-and-macros)
-   * [Compilation](#compilation)
-   * [Format Specifiers](#format-specifiers)
-   * [Tasks](#tasks)
-   * [Installation](#installation)
-   * [Examples](#examples)
-   * [Authors](#authors)
-<!--te-->
+------------
 
 
-*************************************************************************
+The printf function sends formatted output to stdout.
+A custom _printf() for learning purposes was developed by cohort  #9 students Jimmer and Edward Ortiz.
+_printf() function format string is a character string, beginning and ending in its initial shift state, if any. 
+These arguments are placed using the percentage '%' operator
 
-## General Requirements
-
-Here are the general requirements:
-
-  - Allowed editors: vi, vim, emacs
-  - All your files will be compiled on Ubuntu 14.04 LTS
-  - Your programs and functions will be compiled with gcc 4.8.4 using the flags **-Wall -Werror -Wextra** and **-pedantic**
-  - All your files should end with a new line
-  - *A README.md* file, at the root of the folder of the project is mandatory
-Your code should use the Betty style. It will be checked using [betty-style.pl](https://github.com/holbertonschool/Betty/blob/master/betty-style.pl) and [betty-doc.pl](https://github.com/holbertonschool/Betty/blob/master/betty-doc.pl)
-  - You are not allowed to use global variables
-  - No more than 5 functions per file
-  - In the following examples, the main.c files are shown as examples. You can use them to test your functions, but you don’t have to push them to your repo (if you do we won’t take them into account). We will use our own main.c files at compilation. Our main.c files might be different from the one shown in the examples
-  - The prototypes of all your functions should be included in your header file called **holberton.h**
-  - Don’t forget to push your header file
-  - All your header files should be include guarded
-  - Note that we will not provide the **_putchar** function for this project
-
-******************************************************************************
-
-## Authorized functions and macros
-
-  - `write (man 2 write)`
-  - `malloc (man 3 malloc)`
-  - `free (man 3 free)`
-  - `va_start (man 3 va_start)`
-  - `va_end (man 3 va_end)`
-  - `va_copy (man 3 va_copy)`
-  - `va_arg (man 3 va_arg)`
-
-******************************************************************************
-
-## Compilation
-  -  Your code will be compiled this way:
-  ```$ gcc -Wall -Werror -Wextra -pedantic *.c```
-  - As a consequence, be careful not to push any c file containing a main function in the root directory of your project (you could have a test folder containing all your tests files including main functions)
-  - Our main files will include your main header file (`holberton.h`): `#include holberton.h`
-  - You might want to look at the `gcc` flag `-Wno-format` when testing with your `_printf` and the standard `printf`.
-
-*******************************************************************************
-
-## Format Specifiers
-Function name | Description | Format Specifier
---- | --- | ---
-`print_char` | Prints a character | `%c`
-`print_percent` | Prints a % | `%%`
-`print_int` | Prints an integer | `%d` & `%i`
-`print_string` | Prints a string | `%s`
-`print_binary` | Prints a binary, custom specifier | `%b`
-`print_octal` | Prints number in base 8 | `%o`
-`print_hex` | Prints hexadecimal in lowercase | `%x`
-`print_HEX` | Prints hexadecimal in uppercase | `%X`
-`print_unsigned` | Prints unsigned integer | `%u`
-`print_S` | Prints string, prints hex value of non visible characters | `%S`
-`print_address` | Prints a pointer | `%p`
-`print_rev` | Prints string in reverse, custom specifier | `%r`
-`print_rot13` | Prints string in rot13, custom specifier | `%R`
+------------
 
 
-*******************************************************************************
+#### Resources
 
-### Tasks
-<details>
-<summary>
-Click here to expand
-</summary>
-<ul>
-
-<li>- 0. I'm not going anywhere. You can print that wherever you want to. I'm here and I'm a Spur for life <i>mandatory</i>
-</li><li> - 1. Education is when you read the fine print. Experience is what you get if you don't  <i>mandatory</i>
-</li><li> - 2. Just because it's in print doesn't mean it's the gospel  <i>mandatory</i>
-</li><li> - 3. With a face like mine, I do better in print <i>#advanced</i>
-</li><li> - 4. What one has not experienced, one will never understand in print <i>#advanced</i>
-</li><li> - 5. Nothing in fine print is ever good news <i>#advanced</i>
-</li><li> - 6. My weakness is wearing too much leopard print <i>#advanced</i>
-</li><li> - 7. How is the world ruled and led to war? Diplomats lie to journalists and believe these lies when they see them in print <i>#advanced</i>
-</li><li> - 8. The big print gives and the small print takes away <i>#advanced</i>
-</li><li> - 9. Sarcasm is lost in print <i>#advanced</i>
-</li><li> - 10. Print some money and give it to us for the rain forests <i>#advanced</i>
-</li><li> - 11. The negative is the equivalent of the composer's score, and the print the performance <i>#advanced</i>
-</li><li> - 12. It's depressing when you're still around and your albums are out of print <i>#advanced</i>
-</li><li> - 13. Every time that I wanted to give up, if I saw an interesting textile, print what ever, suddenly I would see a collection <i>#advanced</i>
-</li><li> - 14. Print is the sharpest and the strongest weapon of our party <i>#advanced</i>
-</li><li> - 15. The flood of print has turned reading into a process of gulping rather than savoring <i>#advanced</i>
-</li><li> - 16. All of the above functionality should work flawlessly <i>#advanced</i>
-</ul>
-</details>
-
-## Installation
-
-In order to use this custom `_printf` function you need only `<unistd.h>` library
-First, clone this repository to your local machine:
-```
-$ git clone https://github.com/narnat/printf.git
-```
-
-After cloning go to the printf folder
-
-```
-$ cd printf
-```
-You can compile it with your your C source code
-
-```
-$ gcc *.c your_C_source_code -o output
-```
-But the simplest solution is to make it portable, in other words to create a static library:
-```
-gcc *.c
-ar -rc libprintf.a *.o
-ranlib libprintf.a
-```
-Now you will have `printf.a` static library, and all you have to do is compile your code with this library:
-```
-gcc your_C_source_code -L. -lprintf
-```
-
-*****************************************************************************************************
+------------
 
 
-## Examples
-```
-arthur@ubuntu:~/printf$ cat main.c
-#include <limits.h>
-#include <stdio.h>
-#include "holberton.h"
+Secrets of printfby Don colton
+https://www.cypress.com/file/54761/download
 
-/**
- * main - Entry point
- *
- * Return: Always 0
- */
-int main(void)
-{
-    int len;
-    int len2;
-    unsigned int ui;
-    void *addr;
+------------
 
-    len = _printf("Let's try to printf a simple sentence.\n");
-    len2 = printf("Let's try to printf a simple sentence.\n");
-    ui = (unsigned int)INT_MAX + 1024;
-    addr = (void *)0x7ffe637541f0;
-    _printf("Length:[%d, %i]\n", len, len);
-    printf("Length:[%d, %i]\n", len2, len2);
-    _printf("Negative:[%d]\n", -762534);
-    printf("Negative:[%d]\n", -762534);
-    _printf("Unsigned:[%u]\n", ui);
-    printf("Unsigned:[%u]\n", ui);
-    _printf("Unsigned octal:[%o]\n", ui);
-    printf("Unsigned octal:[%o]\n", ui);
-    _printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
-    printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
-    _printf("Character:[%c]\n", 'H');
-    printf("Character:[%c]\n", 'H');
-    _printf("String:[%s]\n", "I am a string !");
-    printf("String:[%s]\n", "I am a string !");
-    _printf("Address:[%p]\n", addr);
-    printf("Address:[%p]\n", addr);
-    len = _printf("Percent:[%%]\n");
-    len2 = printf("Percent:[%%]\n");
-    _printf("Len:[%d]\n", len);
-    printf("Len:[%d]\n", len2);
-    _printf("Unknown:[%r]\n");
-    printf("Unknown:[%r]\n");
-    return (0);
-}
-arthur@ubuntu:~/printf$ gcc -Wall -Wextra -Werror -pedantic -Wno-format *.c
-arthur@ubuntu:~/printf$ ./printf
-Let's try to printf a simple sentence.
-Let's try to printf a simple sentence.
-Length:[39, 39]
-Length:[39, 39]
-Negative:[-762534]
-Negative:[-762534]
-Unsigned:[2147484671]
-Unsigned:[2147484671]
-Unsigned octal:[20000001777]
-Unsigned octal:[20000001777]
-Unsigned hexadecimal:[800003ff, 800003FF]
-Unsigned hexadecimal:[800003ff, 800003FF]
-Character:[H]
-Character:[H]
-String:[I am a string !]
-String:[I am a string !]
-Address:[0x7ffe637541f0]
-Address:[0x7ffe637541f0]
-Percent:[%]
-Percent:[%]
-Len:[12]
-Len:[12]
-Unknown:[%r]
-Unknown:[%r]
-arthur@ubuntu:~/printf$
-```
 
-*****************************************************************************************************
 
-## Authors
-- [Arthur Damm](https://github.com/arthurdamm/twodoor) ~ [LinkedIn](https://www.linkedin.com/in/arthur-damm-96527042/) ~ [@arthurdamm](https://twitter.com/arthurdamm):
-*Sharpening my skills at Holberton School of Software Engineering. I have a lifelong passion for programming with a background in mathematics and a daily meditation practice. Spent the last several
-years enjoying working as a private tutor and am now excited to practice software wizardry professionally.*
+#### Authorized functions and macros
 
+------------
+
+
+write (man 2 write)
+malloc (man 3 malloc)
+free (man 3 free)
+va_start (man 3 va_start)
+va_end (man 3 va_end)
+va_copy (man 3 va_copy)
+va_arg (man 3 va_arg)
+
+------------
+
+#### Compilation
+
+------------
+
+
+
+The code must be compiled this way:
+
+**$ gcc -Wall -Werror -Wextra -pedantic *.c**
+
+As a consequence, be careful not to push any c file containing a main function in the root directory of your project (you could have a test folder containing all your tests files including main functions)
+
+The main files will include your main header file (holberton.h): **#include holberton.h**
+
+------------
+
+#### Use & Examples
+
+
+------------
+
+**Prototype:** int _printf(const char *format, ...);
+**Use - General:** _printf("format string", var1, var2, ...);
+
+**Examples:**
+ - Basic String: _printf("%s Holberton", "Hello");`
+	 - Output: Hello Holberton
+
+- Print integers: _printf("This is an array element: arr[%d]:%c", 32, arr[32]);`
+	- Output: This is an array element arr[32]:A
+
+Many other specifiers and flags were added and by combinig those the _printf() function generate a different ouput. The following list are the specifiers and flags allowed.
+
+------------
+
+#### Use & Examples
+
+
+------------
+
+###### Specifiers
+
+Specifier                |Output                        |Examples |
+|----------------|-------------------------------|-----------------------------|
+| `c` | Character | y |
+| `d` or `i` | Signed integer | 1024, -1024 |
+| `s` | String of characters | Hello Holberton |
+| `b` | Binary Representation of unsigned integer | 01010110 |
+| `u` | Unsigned integer | 1024 |
+| `o` | Unsigned octal | 432 |
+| `x` | Unsigned hexadecimal integer | 3ca |
+| `X` | Unsigned hexadecimal integer (uppercase) | 3CA |
+| `S` | String with hex-ascii value replacing special chars | \x0A\x0A |
+| `p` | Pointer address | 0x403212 |
+| `r` | Reversed string of characters | dlroW olleH |
+| `R` | ROT13 Translation of string | Uryyb |
+
+###### Flags (In development...)
+
+|Flag                |Description                        |
+|----------------|-------------------------------|
+| `-` |Left-justify the output within the field width that was given; Right justification is the default (see _width_ sub-specifier). |
+| `+` |Preceeds the result with a plus or minus sign (`+` or `-`) even for positive numbers. By default, only negative numbers are preceded with a `-` sign. |
+| `(space)` |If no sign is going to be written, a blank space is inserted before the value. |
+| `#` |Used with `o`, `x` or `X` specifiers the value is preceeded with 0, 0x or 0X respectively for values different than zero. |
+| `0` |Left-pads the number with zeroes (`0`) instead of spaces when padding is specified (see _width_ sub-specifier). |
+
+###### Width (In development...)
+
+|Width                |Description                        |
+|----------------|-------------------------------|
+| `(number)` |Minimum number of characters to be printed. If the value to be printed is shorter than this number, the result is padded with blank spaces. The value is not truncated even if the result is larger.|
+| `*` | The _width_ is not specified in the _format_ string, but as an additional integer value argument preceding the argument that has to be formatted.|
+
+### Precision (In development...)
+
+|.Precision               |Description                        |
+|----------------|-------------------------------|
+| `.(number)` |**For integer specifiers (`d`, `i`, `o`, `u`, `x`, `X`):** _precision_ specifies the minimum number of digits to be written. If the value to be written is shorter than this number, the result is padded with leading zeros. The value is not truncated even if the result is longer. A _precision_ of 0 means that no character is written for the value 0. **For `s`**: this is the maximum number of characters to be printed. By default all characters are printed until the ending null character is encountered. If the period is specified without an explicit value for _precision_, 0 is assumed. |
+
+### Lenght modifiers (In development...)
+
+|Modifier/Specifier  |`d` & `i`  |`u`, `o`, `x`, `X` |`c` |`s` |`p` |
+|----------------|---------|------------|-------------|-----|-------|
+| `none` | int |unsigned int | int| char pointer| void pointer |
+| `h` |short int|unsigned short int |     |     |              |
+| `l` |long int |unsigned long int  |     |     |              |
+
+------------
+
+#### Files contained in this repository
+
+
+------------
+
+|Name                |Information                        |Relevant Files                         |
+|----------------|-------------------------------|-----------------------------|
+|`man_3_printf`|Man page of the _printf() function.| `None` |
+|`holberton.h`	| Header file with the data type struct, standard libraries and custom prototypes.| `*.c compilation` |
+|`_printf.c`|Main printf function file. Calls other functions.|`printf_(name of var).c file` |
+|`printf_37.c`|Contains percentage print function.|`None` |
+|`printf_int.c` | Contains decimal and integer functions. | `None` | 
+`printf_char.c` | Custom function for char data type. | `None`
+|`printf_sting.c` | Function that calls string type variable. | `None` |
+|`printf_bin.c` | Function that gets the binary | `None` |
+`printf_oct.c` | Functions that returns octal number. | `None` |
+`printf_hex.c` | Calls hexadecimal numbers (lowercase). | `None` | 
+`printf_HEX.c` | Calls hexadecimal numbers (Uppercase). | `None` |
+`printf_unsigned.c` | Returns an unisgined data type. | `None` |
+`printf_hex_aux.c` | Auxiliar function for hexadecimal specific functions (lowercase). | `printf_exclusive_string.c` | 
+`printf_HEX_aux.c` | Auxiliar function hexadecimal specific functions (Uppercase). | `printf_p.c` |
+`printf_exclusive_string.c` | Returns a string and non readable characters are printed in hexadecimal numbers (Lowercase). | `printf_hex_aux.c` |
+`printf_srev.c` | Returns a string in reverse. | `None` |
+`printf_rot13.c` | Returns a string in Rot13. | `None` |
+`printf_str.c` | Auxiliar functions such as strlen and strcpy. | `None` |
+`_putchar.c` | Custom putchar function. | `None` |
+
+
+------------
+
+#### Tasks required for this project
+
+
+------------
+
+0. ###### I am not going anywhere. You can print that wherever you want to. I'm here and I am a Spur for life1.  I am not going anywhere. You can print that wherever you want to. I'm here and I am a Spur for life. 
+Write a function that produces output according to a format.
+Handle the following conversion specifiers:
+- c
+- s
+- %
+
+1. ###### Education is when you read the fine print. Experience is what you get if you dont
+Handle the following conversion specifiers:
+- d
+- i
+
+2. ###### Just because its in print doesn't mean its the gospel
+Create a man page for the function
+
+3. ###### With a face like mine, I do better in print
+Handle the following conversion specifiers:
+- b
+
+4. ###### What one has not experienced, one will never understand in print
+Handle the following conversion specifiers:
+- u
+- x
+- o
+- x
+- X
+
+5. ###### Nothing in fine print is ever good news
+Use a local buffer of 1024 chars in order to call write as little as possible.
+
+6. ###### Handle the following custom conversion specifier
+- S : prints the string.
+- Non printable characters (0 < ASCII value < 32 or >= 127) are printed this way: \x, followed by the ASCII code value in hexadecimal (upper case - always 2 characters).
+
+7. ###### How is the world ruled and led to war? Diplomats lie to journalists and believe these lies when they see them in print
+Handle the following conversion specifier: p
+
+8. ###### The big print gives and the small print takes away
+Handle the following flag characters for non-custom conversion specifiers:
+- ´+´
+- space
+- ´#´ 
+
+9. ###### Sarcasm is lost in print
+Handle the following length modifiers for non-custom conversion specifiers:
+- l
+- h
+Conversion specifiers to handle: d, i, u, o, x, X
+
+10. ###### Print some money and give it to us for the rain forests
+Handle the field width for non-custom conversion specifiers.
+
+11. ###### The negative is the equivalent of the composer's score, and the print the performance
+Handle the precision for non-custom conversion specifiers.
+
+12. ###### It's depressing when you're still around and your albums are out of print
+Handle the 0 flag character for non-custom conversion specifiers.
+
+13. ###### Every time that I wanted to give up, if I saw an interesting textile, print what ever, suddenly I would see a collection
+Handle the - flag character for non-custom conversion specifiers.
+
+14. ###### Print is the sharpest and the strongest weapon of our party
+Handle the following custom conversion specifier:
+ - r : prints the reversed string
+
+15. ###### The flood of print has turned reading into a process of gulping rather than savoring 
+Handle the following custom conversion specifier:
+- R: prints the rot13'ed string
+
+16. ###### *
+All the above options work well together.
+
+### Authors &copy;
+
+- Jimmer Hernandez
+- Edward Ortiz
